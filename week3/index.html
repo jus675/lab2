@@ -29,14 +29,16 @@
         }
 
         body {
-            background-color: #ff474c;
-            color: white;
             font-family: 'Verdana';
             margin: 20px;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            background-image: url('blue-forest.jpg');
+            background-repeat: no-repeat;  /* Prevent the background image from repeating */
+            background-size: cover;       /* Cover the entire background */
+            background-position: center;
         }
 
         img.img-radius {
@@ -80,16 +82,6 @@
         .user-social-link .fa-instagram {
             color: #007bff;
         }
-
-        .video-container {
-            text-align: center;
-        }
-        
-        .video-container img {
-            max-width: 50%; 
-            max-height: 100vh; 
-            margin-top: 20px;
-        }
         
     </style>
 </head>
@@ -118,12 +110,6 @@
     </div>
     </div>
     <br>
-    <div class="video-container">
-        <a href="https://www.youtube.com/watch?v=W761DtH1oRg"><img
-                src="https://www.bhmpics.com/downloads/dreamcatcher-kpop-desktop-4k-Wallpapers/2.fd0pyc3uaaeuc0a.jpg"
-                alt="Dreamcatcher"></a>
-        <p class="video-caption">Stan Dreamcatcher!</p>
-    </div>
     </div>
 </body>
 
