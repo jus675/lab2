@@ -20,9 +20,9 @@
             padding: 20px;
             border-radius: 10px;
             text-align: center;
-            max-width: 600px; /* Set desired maximum width */
-            margin: 20px 20px 20px 0;/* Center the container horizontally */
-            overflow: hidden
+            max-width: 430px; /* Set desired maximum width */
+            margin: 20px auto;/* Center the container horizontally */
+            overflow: hidden;
         }
 
         center {
@@ -31,7 +31,8 @@
 
         body {
             font-family: '000webfont';
-            margin: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
             flex-direction: column;
             align-items: center;
             justify-content: center;
@@ -50,7 +51,7 @@
         }
 
         p {
-            font-size: 30px;
+            font-size: 20px;
         }
         
         /* Clouds Container */
@@ -85,7 +86,7 @@
         }
 
         .ether {
-            white-space: nowrap; /* Prevent the text from wrapping */
+            white-space: nowrap;  /* Prevent the text from wrapping */
             overflow: hidden; /* Hide the overflowed content */
             animation: scrollText 10s linear infinite; /* Adjust the duration and timing function as needed */
         }
@@ -110,7 +111,7 @@
             padding: 20px;
             margin-top: 20px;
             border-radius: 10px;
-            max-width: 600px;
+            max-width: 400px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -120,7 +121,7 @@
         }
 
         .user-social-link a {
-            font-size: 30px;
+            font-size: 15px;
             margin: 0 10px;
             color: white;
         }
@@ -141,7 +142,19 @@
             color: #46f6fd;
         }
 
+        @media (max-width: 600px) {
+            .main-container {
+                max-width: 400px; 
+            }
         
+            h1, h2, h3 {
+                font-size: 40px; 
+            }
+        
+            p {
+                font-size: 18px; 
+            }
+        }        
         
     </style>
 </head>
@@ -151,16 +164,16 @@
         <div class="main-container">
             <div class="clouds"></div>  
             
-            <h1 class="ether" style="font-size:70px">Justine's Ether</h1>
+            <h1 class="ether" style="font-size:60px">Justine's Ether</h1>
             <img src="profile-picture.png"
-            class="img-radius" alt="User-Profile-Image" style="width:180px;height:180px">
+            class="img-radius" alt="User-Profile-Image" style="width:120px;height:120px">
             <br>
-            <h2 style="font-size:45px">Welcome to my space!</h2>
-            <h3 style="font-size:40px">BSCS-SS221</h3>
+            <h2 style="font-size:30px">Welcome to my space!</h2>
+            <h3 style="font-size:25px">BSCS-SS221</h3>
 
     <div class="user-info">
         <p>Hi I am Justine! Nice to meet you.</p>
-        <p>I'm 19 years old, born on January 20, 2004.</p>
+        <p>I'm 19 y.o., born on Jan 20, 2004.</p>
         <p>I live in Pasay City.</p>
     </div>
 
