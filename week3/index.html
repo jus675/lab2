@@ -10,26 +10,13 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="cloud-icon.png">
     <style>
+
         @font-face {
             font-family: "000webfont";
             src: url("000webfont.ttf");
         }
 
-        .main-container {
-            background-color: #3354f9fe;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            max-width: 430px; /* Set desired maximum width */
-            height: 620px;
-            margin: 20px auto;/* Center the container horizontally */
-            overflow: hidden;
-        }
-
-        center {
-            text-align: center;
-        }
-
+        /* Body Styling */
         body {
             font-family: '000webfont';
             margin-top: 20px;
@@ -40,19 +27,33 @@
             min-height: 100vh;
             background-image: url('blue-forest.jpg');
             background-repeat: no-repeat;  /* Prevent the background image from repeating */
-            background-size: cover;       /* Cover the entire background */
+            background-size: auto;       /* Cover the entire background */
             background-position: center;
             overflow: hidden; /* Hide scrollbars */
         }
 
+        /* Headings Styling */
         h1, h2, h3 {
             color: white;
             font-family: '000webfont';
             
         }
 
+        /* Paragraph Styling */
         p {
             font-size: 21px;
+        }
+
+        /* Main Container */
+        .main-container {
+            background-color: #3354f9fe;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 430px; /* Set desired maximum width */
+            height: 620px;
+            margin: 20px auto;/* Center the container horizontally */
+            overflow: hidden;
         }
         
         /* Clouds Container */
@@ -86,25 +87,26 @@
             }
         }
 
+        .wrapper {
+            max-width: 100%;
+            overflow: hidden;
+          }
+          
+        /* Ether Text: Justine's Ether*/
         .ether {
-            white-space: nowrap;  /* Prevent the text from wrapping */
             overflow: hidden; /* Hide the overflowed content */
+            position: relative;
+            white-space: nowrap;  /* Prevent the text from wrapping */
             animation: scrollText 10s linear infinite; /* Adjust the duration and timing function as needed */
+            display: inline-block;
         }
 
-        @keyframes scrollText {
-            0% {
-                transform: translateX(100%); /* Start off-screen to the right */
-            }
-            100% {
-                transform: translateX(-100%); /* Scroll to the left */
-            }
-        }
-
+        /* Image Styling */
         img.img-radius {
             border-radius: 50%;
         }
 
+        /* User Info Styling */
         div.user-info {
             text-align: center;
             background-color: #3354f9fe;
@@ -116,18 +118,20 @@
             margin-left: auto;
             margin-right: auto;
         }
-
+        
+        /* User Social Links Styling */
         .user-social-link {
-            margin-top: 20px;
+            margin-top: 5px;
         }
 
         .user-social-link a {
             font-size: 25px;
             margin: 0 10px;
+            margin-bottom: auto;
             color: white;
         }
 
-        .user-social-link a:hover {
+        .user-social-link a:hover i {
             color: #007bff;
         }
 
@@ -143,6 +147,17 @@
             color: #46f6fd;
         }
 
+        /*Ether Text Animation*/
+        @keyframes scrollText {
+            0% {
+                transform: translateX(100%); /* Start off-screen to the right */
+            }
+            100% {
+                transform: translateX(-100%); /* Scroll to the left */
+            }
+        }
+        
+        /* Responsive Styling */
         @media (max-width: 600px) {
             .main-container {
                 max-width: 400px; 
@@ -163,8 +178,7 @@
 <body> 
     <div class="main-container mx-auto">    
         <div class="main-container">
-            <div class="clouds"></div>  
-            
+            <div class="clouds"></div> 
             <h1 class="ether" style="font-size:60px">Justine's Ether</h1>
             <img src="profile-picture.png"
             class="img-radius" alt="User-Profile-Image" style="width:120px;height:120px">
@@ -185,6 +199,8 @@
             </div>
         </div>
     </div>
+    <p style="color: white">Click Me!</p>
+    <a href="https://tamanotchi.world/9607c"><img src="https://tamanotchi.world/i/9607" alt="It's tamaNOTchi! Click to feed!"></a>
 </body>
 
 </html>
