@@ -30,7 +30,6 @@
             background-repeat: no-repeat;  /* Prevent the background image from repeating */
             background-size: cover;       /* Cover the entire background */
             background-position: center;
-            overflow: hidden; /* Hide scrollbars */
         }
 
         /* Headings Styling */
@@ -222,52 +221,50 @@
 
     <p id="demo" style="color: white">
         <a href="https://tamanotchi.world/9607c">
-        <img src="https://tamanotchi.world/i/9607" alt="It's tamaNOTchi! Click to feed!">
+            <img src="https://tamanotchi.world/i/9607" alt="It's tamaNOTchi! Click to feed!">
         </a>
     </p>
-        
-    <div class="button">    
+    
+    <div class="button">
         <button style="background-color:rgba(38, 38, 232, 0.868); color:white" type="button" onclick='toggleContent()'>Click Me!</button>
     </div>
-
+    
+    <p id="clickCount" style="color: white">Click count: 0</p>
+    <p id="hungerStatus" style="color: white">Hunger status: Not hungry</p>
+    
     <script>
-
-        // Variable to track the current state
+        // Variables to track the current state
         let isAlternateContent = false;
         let clickCount = 0;
-        let isHungry = true; // Initially hungry
-
-        // Function to toggle content based on button click
+        let isHungry = false;
+    
         function toggleContent() {
             // Increment the click count
             clickCount++;
-
-            // Toggle the state based on the click count
-            isAlternateContent = clickCount % 2 === 0;
-
-            // Toggle hunger status
-            isHungry = !isHungry;
-            
+    
+            // Toggle the hunger status based on the click count
+            isHungry = clickCount % 3 === 0; // Change 3 to any number to adjust the frequency
+    
+            // Toggle the state based on the click count and hunger status
+            isAlternateContent = isHungry || clickCount % 2 === 0;
+    
             // Set innerHTML based on the current state
             document.getElementById("demo").innerHTML = isAlternateContent
-            ? (isHungry
-                ? `<p>Oh no! tamaNOTchi is still hungry. Click to feed!</p>`
-                : `<p>Yay! tamaNOTchi is full and happy. Click for more fun!</p>`)
-            : (isHungry
                 ? `<a href="https://tamanotchi.world/9768c">
                     <img src="https://tamanotchi.world/i/9768" alt="It's tamaNOTchi! Click to feed!">
                 </a>`
                 : `<a href="https://tamanotchi.world/9607c">
                     <img src="https://tamanotchi.world/i/9607" alt="It's tamaNOTchi! Click to feed!">
-                </a>`);
-        
+                </a>`;
+    
             // Update the click count display
             document.getElementById("clickCount").innerHTML = `Click count: ${clickCount}`;
-            }
-        
-        </script>
-
-
+    
+            // Update hunger status display
+            document.getElementById("hungerStatus").innerHTML = `Hunger status: ${isHungry ? 'Hungry' : 'Not hungry'}`;
+        }
+    </script>
+    
 </body>
 
 </html>
