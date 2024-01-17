@@ -234,24 +234,36 @@
 
         // Variable to track the current state
         let isAlternateContent = false;
+        let clickCount = 0;
+        let isHungry = true; // Initially hungry
+
+        // Function to toggle content based on button click
         function toggleContent() {
-        
-            // Toggle the state
-            isAlternateContent = !isAlternateContent;
-        
+            // Increment the click count
+            clickCount++;
+
+            // Toggle the state based on the click count
+            isAlternateContent = clickCount % 2 === 0;
+
+            // Toggle hunger status
+            isHungry = !isHungry;
+            
             // Set innerHTML based on the current state
             document.getElementById("demo").innerHTML = isAlternateContent
-        
-            ? `
-                <a href="https://tamanotchi.world/9768c">
-                <img src="https://tamanotchi.world/i/9768" alt="It's tamaNOTchi! Click to feed!">
+            ? (isHungry
+                ? `<p>Oh no! tamaNOTchi is still hungry. Click to feed!</p>`
+                : `<p>Yay! tamaNOTchi is full and happy. Click for more fun!</p>`)
+            : (isHungry
+                ? `<a href="https://tamanotchi.world/9768c">
+                    <img src="https://tamanotchi.world/i/9768" alt="It's tamaNOTchi! Click to feed!">
                 </a>`
+                : `<a href="https://tamanotchi.world/9607c">
+                    <img src="https://tamanotchi.world/i/9607" alt="It's tamaNOTchi! Click to feed!">
+                </a>`);
         
-            : `
-                <a href="https://tamanotchi.world/9607c">
-                <img src="https://tamanotchi.world/i/9607" alt="It's tamaNOTchi! Click to feed!">
-                </a>`;
-        }
+            // Update the click count display
+            document.getElementById("clickCount").innerHTML = `Click count: ${clickCount}`;
+            }
         
         </script>
 
