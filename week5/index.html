@@ -220,10 +220,40 @@
         </div>
     </div>
 
-    <p id="demo" style="color:white">JavaScript can change HTML content.</p>
-    <div class="button">
-    <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+    <p id="demo" style="color: white">
+        <a href="https://tamanotchi.world/9607c">
+        <img src="https://tamanotchi.world/i/9607" alt="It's tamaNOTchi! Click to feed!">
+        </a>
+    </p>
+        
+    <div class="button">    
+        <button style="background-color:rgba(38, 38, 232, 0.868); color:white" type="button" onclick='toggleContent()'>Click Me!</button>
     </div>
+
+    <script>
+
+        // Variable to track the current state
+        let isAlternateContent = false;
+        function toggleContent() {
+        
+            // Toggle the state
+            isAlternateContent = !isAlternateContent;
+        
+            // Set innerHTML based on the current state
+            document.getElementById("demo").innerHTML = isAlternateContent
+        
+            ? `
+                <a href="https://tamanotchi.world/9768c">
+                <img src="https://tamanotchi.world/i/9768" alt="It's tamaNOTchi! Click to feed!">
+                </a>`
+        
+            : `
+                <a href="https://tamanotchi.world/9607c">
+                <img src="https://tamanotchi.world/i/9607" alt="It's tamaNOTchi! Click to feed!">
+                </a>`;
+        }
+        
+        </script>
 
 
 </body>
