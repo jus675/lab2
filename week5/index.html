@@ -232,15 +232,32 @@
     <p id="hungerStatus" style="color: white">Hunger status: Not hungry</p>
     
     <script>
-
+        // Tamanotchi Class
         class Tamanotchi {
             constructor(name, image) {
                 this.name = name;
                 this.image = image;
                 this.hunger = 0;
             }
-        }    
-            
+        
+        // Tamanotchi Methods HTML DOM
+
+            feed() {
+                if (this.hunger > 0) {
+                    this.hunger--;
+
+                    // Display a message when fed
+                    document.getElementById("feedMessage").innerHTML = `You fed ${this.name}!`;
+                } else {
+                    // Display a message when not hungry
+                    document.getElementById("feedMessage").innerHTML = `${this.name} is not hungry right now.`;
+                }
+
+                // Update hunger status display
+                document.getElementById("hungerStatus").innerHTML = `Hunger status: ${this.hunger === 0 ? 'Not hungry' : 'Hungry'}`;
+            }
+        }
+    
     </script>
     
 </body>
