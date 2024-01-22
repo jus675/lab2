@@ -273,6 +273,24 @@
 
             document.getElementById("clickCount").innerHTML = `Click count: ${clickCount}`;
         }
+
+        function toggleContent() {
+            // JS Browser BOM: Display a confirmation popup 
+            const isConfirmed = confirm("Are you sure you want to toggle Tamanotchi?");
+        
+            if (isConfirmed) {
+                clickCount++;
+                currentTamanotchi = clickCount % 2 === 0 ? tamanotchi2 : tamanotchi1;
+        
+                document.getElementById("demo").innerHTML = `<a href="https://tamanotchi.world/${currentTamanotchi.name}">
+                <img src="${currentTamanotchi.image}" alt="It's ${currentTamanotchi.name}! Click to feed!">
+                </a>`;
+        
+                document.getElementById("clickCount").innerHTML = `Click count: ${clickCount}`;
+            } else {
+                alert("Tamanotchi toggle canceled.");
+            }
+        }
             
     </script>
     
