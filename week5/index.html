@@ -261,6 +261,18 @@
         // Create instances of Tamanotchi
         const tamanotchi1 = new Tamanotchi('Tama1', 'https://tamanotchi.world/i/9607');
         const tamanotchi2 = new Tamanotchi('Tama2', 'https://tamanotchi.world/i/9768');
+
+        // Function to toggle Tamanotchi when the button is clicked
+        function toggleContent() {
+            clickCount++;
+            currentTamanotchi = clickCount % 2 === 0 ? tamanotchi2 : tamanotchi1;
+
+            document.getElementById("demo").innerHTML = `<a href="https://tamanotchi.world/${currentTamanotchi.name}">
+            <img src="${currentTamanotchi.image}" alt="It's ${currentTamanotchi.name}! Click to feed!">
+            </a>`;
+
+            document.getElementById("clickCount").innerHTML = `Click count: ${clickCount}`;
+        }
             
     </script>
     
