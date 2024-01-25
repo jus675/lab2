@@ -197,15 +197,23 @@
 
 
 <body> 
-    <?php
-        echo "<div style=\"text-align:center; color:blue\">";
-        print "<h1 class='php'> Hello PHP World! </h1>";
-        $nameTamaNOTchi = array("cloudy", "yuki");
-        var_dump($nameTamaNOTchi);
-        $clickTamaNOTchi = "Click TamaNOTchi";
-        $feedtamaNOTchi = "Feed pls!";
-        echo "<p>$clickTamaNOTchi $feedtamaNOTchi</p>";
-        
+<?php
+    echo "<div class='php'>";
+    
+    // TamaNOTchi's data
+    $nameTamaNOTchi = array("cloudy", "yuki");
+    $clickTamaNOTchi = "Click TamaNOTchi below:";
+    $feedTamaNOTchi = "Feed pls!";
+
+    // Simulate feeding TamaNOTchi
+    $treatsGiven = 3; // Change number based on the treats given
+    $happinessLevel = 50 + $treatsGiven * 5;
+
+    echo "<h1 class='php'> Hello PHP World! </h1>";
+    echo "<p>$clickTamaNOTchi $feedTamaNOTchi</p>";
+    echo "<p>The happiness level of $nameTamaNOTchi[0] is $happinessLevel.</p>";
+
+    echo "</div>";
     ?>
 
     <div class="main-container mx-auto">    
