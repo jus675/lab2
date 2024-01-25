@@ -186,12 +186,21 @@
             }
         }        
 
-        
+        .php {
+            color: blue;
+            text-align: center;
+        }
         
     </style>
 </head>
 
+
+
 <body> 
+    <?php
+        echo "<h1 class='php'> Hello World!!!! </h1>";
+    ?>
+
     <div class="main-container mx-auto">    
         <div class="main-container">
             <div class="clouds"></div> 
@@ -232,68 +241,40 @@
     <p id="hungerStatus" style="color: white">Hunger status: Not hungry</p>
     
     <script>
-        // Tamanotchi Class
-        class Tamanotchi {
-            constructor(name, image) {
-                this.name = name;
-                this.image = image;
-                this.hunger = 0;
-            }
-        
-        // Tamanotchi Methods HTML DOM
+        // Variables to track the current state
+        let isAlternateContent = false;
+        let clickCount = 0;
+        let isHungry = false;
 
-            feed() {
-                if (this.hunger > 0) {
-                    this.hunger--;
-
-                    // Display a message when fed
-                    document.getElementById("feedMessage").innerHTML = `You fed ${this.name}!`;
-                } else {
-                    // Display a message when not hungry
-                    document.getElementById("feedMessage").innerHTML = `${this.name} is not hungry right now.`;
-                }
-
-                // Update hunger status display
-                document.getElementById("hungerStatus").innerHTML = `Hunger status: ${this.hunger === 0 ? 'Not hungry' : 'Hungry'}`;
-            }
-        }
-
-        // Create instances of Tamanotchi
-        const tamanotchi1 = new Tamanotchi('Tama1', 'https://tamanotchi.world/i/9607');
-        const tamanotchi2 = new Tamanotchi('Tama2', 'https://tamanotchi.world/i/9768');
-
-        // Function to toggle Tamanotchi when the button is clicked
         function toggleContent() {
+            // Increment the click count
             clickCount++;
-            currentTamanotchi = clickCount % 2 === 0 ? tamanotchi2 : tamanotchi1;
 
-            document.getElementById("demo").innerHTML = `<a href="https://tamanotchi.world/${currentTamanotchi.name}">
-            <img src="${currentTamanotchi.image}" alt="It's ${currentTamanotchi.name}! Click to feed!">
-            </a>`;
+            // Toggle the hunger status based on the click count
+            isHungry = clickCount % 3 === 0; // Change 3 to any number to adjust the frequency
 
-            document.getElementById("clickCount").innerHTML = `Click count: ${clickCount}`;
-        }
+            // Toggle the state based on the click count and hunger status
+            isAlternateContent = isHungry || clickCount % 2 === 0;
 
-        function toggleContent() {
-            // JS Browser BOM: Display a confirmation popup 
-            const isConfirmed = confirm("Are you sure you want to toggle Tamanotchi?");
-        
-            if (isConfirmed) {
-                clickCount++;
-                currentTamanotchi = clickCount % 2 === 0 ? tamanotchi2 : tamanotchi1;
-        
-                document.getElementById("demo").innerHTML = `<a href="https://tamanotchi.world/${currentTamanotchi.name}">
-                <img src="${currentTamanotchi.image}" alt="It's ${currentTamanotchi.name}! Click to feed!">
+            // Set innerHTML based on the current state
+            document.getElementById("demo").innerHTML = isAlternateContent
+                ? `<a href="https://tamanotchi.world/9768c">
+                    <img src="https://tamanotchi.world/i/9768" alt="It's tamaNOTchi! Click to feed!">
+                </a>`
+                : `<a href="https://tamanotchi.world/9607c">
+                    <img src="https://tamanotchi.world/i/9607" alt="It's tamaNOTchi! Click to feed!">
                 </a>`;
-        
-                document.getElementById("clickCount").innerHTML = `Click count: ${clickCount}`;
-            } else {
-                alert("Tamanotchi toggle canceled.");
-            }
+
+            // Update the click count display
+            document.getElementById("clickCount").innerHTML = `Click count: ${clickCount}`;
+
+            // Update hunger status display
+            document.getElementById("hungerStatus").innerHTML = `Hunger status: ${isHungry ? 'Hungry' : 'Not hungry'}`;
         }
-            
-    </script>
+  </script>
     
+    
+
 </body>
 
 </html>
