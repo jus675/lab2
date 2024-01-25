@@ -198,10 +198,11 @@
 
 <body> 
     <?php
-        echo "<h1 class='php'> Hello World!!!! </h1>";
+        print "<h1 class='php'> Hello PHP World! </h1>";
         $clickTamaNOTchi = "Click TamaNOTchi";
         $feedtamaNOTchi = "Feed pls!";
         echo "<p class='php'>$clickTamaNOTchi $feedtamaNOTchi</p>";
+        
     ?>
 
     <div class="main-container mx-auto">    
