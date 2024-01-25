@@ -198,10 +198,13 @@
 
 <body> 
     <?php
+        echo "<div style=\"text-align:center; color:blue\">";
         print "<h1 class='php'> Hello PHP World! </h1>";
+        $nameTamaNOTchi = array("cloudy", "yuki");
+        var_dump($nameTamaNOTchi);
         $clickTamaNOTchi = "Click TamaNOTchi";
         $feedtamaNOTchi = "Feed pls!";
-        echo "<p class='php'>$clickTamaNOTchi $feedtamaNOTchi</p>";
+        echo "<p>$clickTamaNOTchi $feedtamaNOTchi</p>";
         
     ?>
 
