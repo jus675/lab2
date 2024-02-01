@@ -190,6 +190,8 @@
             color: blue;
             text-align: center;
         }
+
+
         
     </style>
 </head>
@@ -215,6 +217,10 @@
 
     echo "</div>";
     ?>
+
+    <center>
+    <a href="formvalidation.php">Forms</a>
+    </center>
 
     <div class="main-container mx-auto">    
         <div class="main-container">
