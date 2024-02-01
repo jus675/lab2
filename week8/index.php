@@ -219,7 +219,7 @@
     ?>
 
     <center>
-    <a href="formvalidation.php">Forms</a>
+    <a href="form.php">Forms</a>
     </center>
 
     <div class="main-container mx-auto">    
